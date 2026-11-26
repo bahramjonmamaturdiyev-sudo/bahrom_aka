@@ -2,8 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17152e">
-<title>Tabriklar olami | Mehr va ehtirom</title><style>
+<meta name="theme-color" content="#07152e"><title>Yangi yil muborak! 🎄</title><style>
 * {
   margin: 0;
   padding: 0;
@@ -12,43 +11,157 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #111126;
+  background:
+    radial-gradient(ellipse at top, #183968 0%, #0b1c3b 45%, #050d20 100%);
   color: #fff;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* QOR */
+#snow {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ARCHA SHОXLARI */
+.garland {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #06101cdd,
+    transparent
+  );
+}
+
+.garland-branch {
+  position: absolute;
+  top: -27px;
+  left: -5%;
+  width: 110%;
+  height: 65px;
+  border-bottom: 5px solid #1b633c;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 5px 10px #0005;
+}
+
+.garland-branch::before {
+  content: "🌲 🌿 🌲 🌿 🌲 🌿 🌲 🌿 🌲 🌿 🌲";
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 100%;
+  font-size: 28px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  opacity: .9;
+}
+
+/* MILTILLAYDIGAN CHIROQLAR */
+.lights {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 8px;
+}
+
+.bulb {
+  width: 11px;
+  height: 15px;
+  border-radius: 50% 50% 45% 45%;
+  display: block;
+  position: relative;
+  animation: blink 1.8s infinite alternate;
+}
+
+.bulb:nth-child(4n+1) {
+  background: #ffcf4a;
+  box-shadow: 0 0 12px #ffcf4a;
+  animation-delay: .2s;
+}
+
+.bulb:nth-child(4n+2) {
+  background: #ff526d;
+  box-shadow: 0 0 12px #ff526d;
+  animation-delay: .7s;
+}
+
+.bulb:nth-child(4n+3) {
+  background: #4de7ff;
+  box-shadow: 0 0 12px #4de7ff;
+  animation-delay: 1s;
+}
+
+.bulb:nth-child(4n) {
+  background: #7cff8a;
+  box-shadow: 0 0 12px #7cff8a;
+  animation-delay: 1.4s;
+}
+
+@keyframes blink {
+  from {
+    opacity: .45;
+    transform: scale(.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* YULDUZLAR */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff9, transparent),
+    radial-gradient(2px 2px at 70% 20%, #fff8, transparent),
+    radial-gradient(2px 2px at 85% 60%, #fff9, transparent),
+    radial-gradient(2px 2px at 35% 75%, #fff7, transparent),
+    radial-gradient(3px 3px at 55% 45%, #ffe6a080, transparent);
+  background-size: 250px 250px;
+  animation: stars 8s ease-in-out infinite alternate;
+}
+
+@keyframes stars {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+/* ASOSIY SAHIFA */
 header {
-  padding: 24px 18px;
+  position: relative;
+  z-index: 1;
   text-align: center;
-  background: linear-gradient(135deg, #251b48, #493078, #241c42);
-  border-bottom: 1px solid #ffffff20;
+  padding: 100px 18px 30px;
+  background: linear-gradient(
+    180deg,
+    #10294d99,
+    #10294d22,
+    transparent
+  );
 }
 
 .logo {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-header h1 {
-  font-size: 27px;
-  color: #ffe5a5;
-  letter-spacing: 1px;
-}
-
-header p {
-  color: #d5c9ed;
-  font-size: 14px;
-  margin-top: 9px;
-}
-
-.hero {
-  text-align: center;
-  padding: 55px 20px 35px;
-}
-
-.hero .symbol {
-  font-size: 52px;
-  margin-bottom: 18px;
+  font-size: 55px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px #ffdb7b);
   animation: float 3s ease-in-out infinite;
 }
 
@@ -57,33 +170,65 @@ header p {
   50% { transform: translateY(-10px); }
 }
 
-.hero h2 {
-  font-size: 25px;
+header h1 {
   color: #ffe5a5;
-  margin-bottom: 12px;
+  font-size: clamp(27px, 6vw, 39px);
+  text-shadow: 0 0 20px #e9bd64;
+  letter-spacing: 1px;
 }
 
-.hero p {
-  max-width: 430px;
-  margin: auto;
-  color: #c7c3dc;
-  line-height: 1.7;
+header p {
+  color: #d7e5ff;
+  margin-top: 10px;
   font-size: 14px;
 }
 
+/* BAYRAM TABRIKI */
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 35px 20px 40px;
+}
+
+.hero .symbol {
+  font-size: 65px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 20px #ffe2a0);
+}
+
+.hero h2 {
+  color: #ffe6a6;
+  font-size: clamp(21px, 5vw, 30px);
+  margin-bottom: 15px;
+  text-shadow: 0 0 12px #d6a94f66;
+}
+
+.hero p {
+  max-width: 450px;
+  margin: auto;
+  color: #d5e4fa;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* ASOSIY KONTEYNER */
 .container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 650px;
   margin: auto;
   padding: 15px 18px 50px;
 }
 
+/* TABRIK FORMASI */
 .form-box {
-  background: linear-gradient(145deg, #282347, #1e1b38);
-  border: 1px solid #ffffff20;
+  background: linear-gradient(145deg, #172d50ee, #111e3bee);
+  border: 1px solid #e8c77b66;
   border-radius: 20px;
   padding: 23px;
-  box-shadow: 0 12px 35px #0004;
+  box-shadow: 0 10px 35px #0005, 0 0 20px #e8c77b12;
 }
 
 .form-box h3 {
@@ -97,8 +242,8 @@ input, textarea {
   padding: 14px;
   margin-bottom: 13px;
   border-radius: 11px;
-  border: 1px solid #ffffff25;
-  background: #15142c;
+  border: 1px solid #ffffff30;
+  background: #091a34;
   color: white;
   font-size: 15px;
   outline: none;
@@ -106,7 +251,8 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #d9b56e;
+  border-color: #e9c36e;
+  box-shadow: 0 0 10px #e9c36e33;
 }
 
 textarea {
@@ -115,53 +261,68 @@ textarea {
 }
 
 input::placeholder, textarea::placeholder {
-  color: #9994b3;
+  color: #aabbd5;
 }
 
 .main-btn {
   width: 100%;
-  padding: 14px;
-  border: none;
+  padding: 15px;
+  border: 1px solid #ffe5a5;
   border-radius: 11px;
-  background: linear-gradient(135deg, #e8c27a, #b88b43);
-  color: #241a31;
+  background: linear-gradient(135deg, #f3d58c, #c18c3e);
+  color: #19233b;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 0 15px #d9b56e33;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px #f4d58c77;
 }
 
 .main-btn:disabled {
   opacity: .6;
-  cursor: wait;
 }
 
+/* TABRIKLAR */
 .section-title {
   text-align: center;
-  margin: 38px 0 22px;
+  margin: 42px 0 22px;
 }
 
 .section-title h2 {
   color: #ffe5a5;
-  font-size: 23px;
+  font-size: 24px;
+  text-shadow: 0 0 12px #d9b56e66;
 }
 
 .section-title p {
-  color: #aaa5c5;
+  color: #c2d3eb;
   font-size: 13px;
-  margin-top: 7px;
+  margin-top: 8px;
 }
 
 .notes {
   display: grid;
-  gap: 15px;
+  gap: 16px;
 }
 
 .card {
-  background: linear-gradient(145deg, #282347, #1d1a35);
-  border: 1px solid #ffffff1c;
-  border-radius: 16px;
+  background: linear-gradient(145deg, #1a3155ee, #10203cee);
+  border: 1px solid #e6c47a55;
+  border-radius: 17px;
   padding: 19px;
+  box-shadow: 0 8px 25px #0004;
   animation: appear .5s ease;
+  transition: .3s;
+}
+
+.card:hover {
+  border-color: #f5d88d;
+  transform: translateY(-2px);
 }
 
 @keyframes appear {
@@ -183,13 +344,13 @@ input::placeholder, textarea::placeholder {
 }
 
 .avatar {
-  width: 42px;
-  height: 42px;
+  width: 43px;
+  height: 43px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #e8c27a, #8f68b7);
-  color: #21182d;
+  background: linear-gradient(135deg, #ffe5a5, #c18c3e);
+  color: #1a2944;
   font-weight: bold;
   font-size: 18px;
 }
@@ -201,14 +362,14 @@ input::placeholder, textarea::placeholder {
 }
 
 .date {
-  color: #9691ad;
+  color: #b0c3df;
   font-size: 11px;
   margin-top: 4px;
 }
 
 .message {
-  color: #e5e0f2;
-  line-height: 1.7;
+  color: #e4edfa;
+  line-height: 1.8;
   font-size: 14px;
   overflow-wrap: anywhere;
 }
@@ -219,34 +380,37 @@ input::placeholder, textarea::placeholder {
   align-items: center;
   margin-top: 17px;
   padding-top: 13px;
-  border-top: 1px solid #ffffff15;
+  border-top: 1px solid #ffffff20;
 }
 
 .gift-btn {
-  background: #ffffff12;
-  border: 1px solid #d9b56e66;
+  background: #e8c77b18;
+  border: 1px solid #e8c77b88;
   color: #ffe5a5;
-  padding: 9px 14px;
+  padding: 10px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 13px;
+  transition: .3s;
 }
 
-.gift-btn:active {
-  transform: scale(.95);
+.gift-btn:hover {
+  background: #e8c77b33;
+  box-shadow: 0 0 12px #e8c77b44;
 }
 
 .gift-count {
-  color: #d9b56e;
+  color: #ffb8c6;
   font-size: 13px;
 }
 
 .empty {
   text-align: center;
   padding: 30px;
-  color: #aaa5c5;
-  background: #ffffff08;
+  color: #c2d3eb;
+  background: #ffffff0b;
   border-radius: 15px;
+  border: 1px solid #ffffff20;
 }
 
 .status {
@@ -257,35 +421,54 @@ input::placeholder, textarea::placeholder {
 }
 
 footer {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  padding: 25px 15px;
-  color: #8d88a7;
+  padding: 28px 15px;
+  color: #b1c3dc;
   font-size: 12px;
-  border-top: 1px solid #ffffff15;
+  border-top: 1px solid #ffffff20;
+  background: #07152e99;
 }
 
 footer span {
-  color: #e8c27a;
+  color: #ffe5a5;
 }
 
 @media(max-width: 400px) {
-  header h1 { font-size: 23px; }
+  header h1 { font-size: 25px; }
   .hero h2 { font-size: 21px; }
   .form-box { padding: 18px; }
 }
-</style></head><body><header>
-  <div class="logo">💌</div>
-  <h1>Tabriklar olami</h1>
-  <p>Mehr, samimiyat va ezgu tilaklar maskani</p>
+
+/* HARAKATNI KAMAYTIRISH SOZLAMASI */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style></head><body><canvas id="snow"></canvas>
+
+<div class="stars"></div><div class="garland">
+  <div class="garland-branch"></div>
+  <div class="lights" id="lights"></div>
+</div><header>
+  <div class="logo">🎄</div>
+  <h1>Yangi yil muborak!</h1>
+  <p>❄️ Ezgu tilaklar va sehrli lahzalar olamiga xush kelibsiz ❄️</p>
 </header><section class="hero">
-  <div class="symbol">✨</div>
-  <h2>Yaxshi tilaklar qalblarni yaqinlashtiradi</h2>
+  <div class="symbol">🎅🏻</div>
+  <h2>Yangi yil — yangi orzular fasli!</h2>
   <p>
-    O'zingizning samimiy tilaklaringizni qoldiring.
-    Har bir ezgu so'z kimgadir quvonch va tabassum ulashsin!
+    Kirib kelayotgan yangi yil qalbingizga quvonch,
+    xonadoningizga fayz-u baraka, hayotingizga baxt
+    va omad olib kelsin!
+    Eng samimiy tilaklaringizni biz bilan baham ko'ring.
   </p>
 </section><main class="container">  <section class="form-box">
-    <h3>✍️ Tabrik yo'llash</h3><form id="noteForm">
+    <h3>💌 Yangi yil tabrigini yo'llang</h3><form id="noteForm">
   <input
     type="text"
     id="name"
@@ -296,13 +479,13 @@ footer span {
 
   <textarea
     id="message"
-    placeholder="Samimiy tilaklaringizni yozing..."
+    placeholder="Yangi yil tilaklaringizni yozing..."
     maxlength="500"
     required
   ></textarea>
 
   <button class="main-btn" id="submitBtn" type="submit">
-    💌 Tabrikni yuborish
+    🎁 Tabrikni yuborish
   </button>
 </form>
 
@@ -310,15 +493,16 @@ footer span {
 
   </section>  <section>
     <div class="section-title">
-      <h2>💝 Samimiy tabriklar</h2>
-      <p>Qalblardan chiqqan eng go'zal tilaklar</p>
+      <h2>✨ Samimiy tilaklar ✨</h2>
+      <p>Har bir tabrik — qalbdan chiqqan sovg'a</p>
     </div><div class="notes" id="notes">
-  <div class="empty">Tabriklar yuklanmoqda...</div>
+  <div class="empty">Tabriklar yuklanmoqda... ❄️</div>
 </div>
 
   </section></main><footer>
-  <p>Mehr ulashish — eng go'zal sovg'a ❤️</p>
-  <p style="margin-top:8px">© 2026 <span>Tabriklar olami</span></p>
+  <p>🎄 Mehr ulashish — eng go'zal sovg'a! ❤️</p>
+  <p style="margin-top:8px">© 2026 <span>Yangi yil tabriklari</span></p>
+  <p style="margin-top:8px">❄️ Yangi yilingiz muborak! ❄️</p>
 </footer><script>
 const API = "/.netlify/functions/api";
 
@@ -327,10 +511,95 @@ const form = document.getElementById("noteForm");
 const statusBox = document.getElementById("status");
 const submitBtn = document.getElementById("submitBtn");
 
-function escapeText(value) {
-  return String(value ?? "");
+/* ARCHA CHIROQLARINI YARATISH */
+const lights = document.getElementById("lights");
+
+for (let i = 0; i < 28; i++) {
+  const bulb = document.createElement("span");
+  bulb.className = "bulb";
+  lights.appendChild(bulb);
 }
 
+/* QOR EFFEKTI */
+const canvas = document.getElementById("snow");
+const ctx = canvas.getContext("2d");
+
+let width;
+let height;
+let flakes = [];
+
+function resizeSnow() {
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  canvas.width = width * ratio;
+  canvas.height = height * ratio;
+
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
+
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+  const count = Math.min(100, Math.max(35, Math.floor(width / 5)));
+
+  flakes = [];
+
+  for (let i = 0; i < count; i++) {
+    flakes.push(createFlake(true));
+  }
+}
+
+function createFlake(randomY) {
+  return {
+    x: Math.random() * width,
+    y: randomY ? Math.random() * height : -10,
+    radius: Math.random() * 2.5 + 1,
+    speed: Math.random() * 1.3 + .5,
+    drift: Math.random() * .7 - .35,
+    opacity: Math.random() * .6 + .3,
+    phase: Math.random() * Math.PI * 2
+  };
+}
+
+let animationFrame;
+
+function drawSnow() {
+  ctx.clearRect(0, 0, width, height);
+
+  flakes.forEach(flake => {
+    flake.phase += .01;
+
+    flake.x += flake.drift + Math.sin(flake.phase) * .25;
+    flake.y += flake.speed;
+
+    if (flake.y > height + 10) {
+      Object.assign(flake, createFlake(false));
+    }
+
+    if (flake.x < -10) flake.x = width + 10;
+    if (flake.x > width + 10) flake.x = -10;
+
+    ctx.beginPath();
+    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${flake.opacity})`;
+    ctx.shadowBlur = 5;
+    ctx.shadowColor = "#ffffff";
+    ctx.fill();
+  });
+
+  ctx.shadowBlur = 0;
+
+  animationFrame = requestAnimationFrame(drawSnow);
+}
+
+resizeSnow();
+drawSnow();
+
+window.addEventListener("resize", resizeSnow);
+
+/* MA'LUMOTLARNI YUKLASH */
 function formatDate(date) {
   const d = new Date(date);
 
@@ -368,11 +637,11 @@ async function load() {
 
       const person = oldRecord
         ? "Avvalgi tabrik"
-        : escapeText(r.name);
+        : String(r.name ?? "");
 
       const message = oldRecord
-        ? escapeText(r.name)
-        : escapeText(r.message);
+        ? String(r.name ?? "")
+        : String(r.message ?? "");
 
       const card = document.createElement("article");
       card.className = "card";
@@ -424,12 +693,13 @@ async function load() {
 
   } catch (error) {
     notes.innerHTML =
-      '<div class="empty">Ma’lumotlarni yuklashda xatolik yuz berdi. Sahifani yangilang.</div>';
+      '<div class="empty">Ma’lumotlarni yuklashda xatolik. Sahifani yangilang.</div>';
 
     console.error(error);
   }
 }
 
+/* YANGI TABRIK SAQLASH */
 form.addEventListener("submit", async function(e) {
   e.preventDefault();
 
@@ -461,7 +731,7 @@ form.addEventListener("submit", async function(e) {
     }
 
     form.reset();
-    statusBox.textContent = "✅ Tabrik muvaffaqiyatli yuborildi!";
+    statusBox.textContent = "🎄 Tabrik muvaffaqiyatli yuborildi!";
 
     await load();
 
@@ -469,1026 +739,11 @@ form.addEventListener("submit", async function(e) {
     statusBox.textContent = "❌ " + error.message;
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = "💌 Tabrikni yuborish";
+    submitBtn.textContent = "🎁 Tabrikni yuborish";
   }
 });
 
-async function sendGift(id, button) {
-  button.disabled = true;
-  button.textContent = "Yuborilmoqda...";
-
-  try {
-    const response = await fetch(API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        action: "gift",
-        id: id
-      })
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Sovg'a yuborilmadi");
-    }
-
-    await load();
-
-  } catch (error) {
-    alert(error.message);
-    button.disabled = false;
-    button.textContent = "🎁 Sovg'a yuborish";
-  }
-}
-
-load();
-</script></body>
-</html><!DOCTYPE html><html lang="uz">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17152e">
-<title>Tabriklar olami | Mehr va ehtirom</title><style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #111126;
-  color: #fff;
-  min-height: 100vh;
-}
-
-header {
-  padding: 24px 18px;
-  text-align: center;
-  background: linear-gradient(135deg, #251b48, #493078, #241c42);
-  border-bottom: 1px solid #ffffff20;
-}
-
-.logo {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-header h1 {
-  font-size: 27px;
-  color: #ffe5a5;
-  letter-spacing: 1px;
-}
-
-header p {
-  color: #d5c9ed;
-  font-size: 14px;
-  margin-top: 9px;
-}
-
-.hero {
-  text-align: center;
-  padding: 55px 20px 35px;
-}
-
-.hero .symbol {
-  font-size: 52px;
-  margin-bottom: 18px;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.hero h2 {
-  font-size: 25px;
-  color: #ffe5a5;
-  margin-bottom: 12px;
-}
-
-.hero p {
-  max-width: 430px;
-  margin: auto;
-  color: #c7c3dc;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.container {
-  width: 100%;
-  max-width: 650px;
-  margin: auto;
-  padding: 15px 18px 50px;
-}
-
-.form-box {
-  background: linear-gradient(145deg, #282347, #1e1b38);
-  border: 1px solid #ffffff20;
-  border-radius: 20px;
-  padding: 23px;
-  box-shadow: 0 12px 35px #0004;
-}
-
-.form-box h3 {
-  color: #ffe5a5;
-  font-size: 19px;
-  margin-bottom: 20px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 13px;
-  border-radius: 11px;
-  border: 1px solid #ffffff25;
-  background: #15142c;
-  color: white;
-  font-size: 15px;
-  outline: none;
-  font-family: inherit;
-}
-
-input:focus, textarea:focus {
-  border-color: #d9b56e;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #9994b3;
-}
-
-.main-btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #e8c27a, #b88b43);
-  color: #241a31;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.main-btn:disabled {
-  opacity: .6;
-  cursor: wait;
-}
-
-.section-title {
-  text-align: center;
-  margin: 38px 0 22px;
-}
-
-.section-title h2 {
-  color: #ffe5a5;
-  font-size: 23px;
-}
-
-.section-title p {
-  color: #aaa5c5;
-  font-size: 13px;
-  margin-top: 7px;
-}
-
-.notes {
-  display: grid;
-  gap: 15px;
-}
-
-.card {
-  background: linear-gradient(145deg, #282347, #1d1a35);
-  border: 1px solid #ffffff1c;
-  border-radius: 16px;
-  padding: 19px;
-  animation: appear .5s ease;
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: 13px;
-}
-
-.avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #e8c27a, #8f68b7);
-  color: #21182d;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.person {
-  font-weight: bold;
-  color: #ffe5a5;
-  font-size: 15px;
-}
-
-.date {
-  color: #9691ad;
-  font-size: 11px;
-  margin-top: 4px;
-}
-
-.message {
-  color: #e5e0f2;
-  line-height: 1.7;
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 17px;
-  padding-top: 13px;
-  border-top: 1px solid #ffffff15;
-}
-
-.gift-btn {
-  background: #ffffff12;
-  border: 1px solid #d9b56e66;
-  color: #ffe5a5;
-  padding: 9px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.gift-btn:active {
-  transform: scale(.95);
-}
-
-.gift-count {
-  color: #d9b56e;
-  font-size: 13px;
-}
-
-.empty {
-  text-align: center;
-  padding: 30px;
-  color: #aaa5c5;
-  background: #ffffff08;
-  border-radius: 15px;
-}
-
-.status {
-  text-align: center;
-  font-size: 13px;
-  margin-top: 12px;
-  color: #ffe5a5;
-}
-
-footer {
-  text-align: center;
-  padding: 25px 15px;
-  color: #8d88a7;
-  font-size: 12px;
-  border-top: 1px solid #ffffff15;
-}
-
-footer span {
-  color: #e8c27a;
-}
-
-@media(max-width: 400px) {
-  header h1 { font-size: 23px; }
-  .hero h2 { font-size: 21px; }
-  .form-box { padding: 18px; }
-}
-</style></head><body><header>
-  <div class="logo">💌</div>
-  <h1>Tabriklar olami</h1>
-  <p>Mehr, samimiyat va ezgu tilaklar maskani</p>
-</header><section class="hero">
-  <div class="symbol">✨</div>
-  <h2>Yaxshi tilaklar qalblarni yaqinlashtiradi</h2>
-  <p>
-    O'zingizning samimiy tilaklaringizni qoldiring.
-    Har bir ezgu so'z kimgadir quvonch va tabassum ulashsin!
-  </p>
-</section><main class="container">  <section class="form-box">
-    <h3>✍️ Tabrik yo'llash</h3><form id="noteForm">
-  <input
-    type="text"
-    id="name"
-    placeholder="Ismingizni kiriting"
-    maxlength="60"
-    required
-  >
-
-  <textarea
-    id="message"
-    placeholder="Samimiy tilaklaringizni yozing..."
-    maxlength="500"
-    required
-  ></textarea>
-
-  <button class="main-btn" id="submitBtn" type="submit">
-    💌 Tabrikni yuborish
-  </button>
-</form>
-
-<div class="status" id="status"></div>
-
-  </section>  <section>
-    <div class="section-title">
-      <h2>💝 Samimiy tabriklar</h2>
-      <p>Qalblardan chiqqan eng go'zal tilaklar</p>
-    </div><div class="notes" id="notes">
-  <div class="empty">Tabriklar yuklanmoqda...</div>
-</div>
-
-  </section></main><footer>
-  <p>Mehr ulashish — eng go'zal sovg'a ❤️</p>
-  <p style="margin-top:8px">© 2026 <span>Tabriklar olami</span></p>
-</footer><script>
-const API = "/.netlify/functions/api";
-
-const notes = document.getElementById("notes");
-const form = document.getElementById("noteForm");
-const statusBox = document.getElementById("status");
-const submitBtn = document.getElementById("submitBtn");
-
-function escapeText(value) {
-  return String(value ?? "");
-}
-
-function formatDate(date) {
-  const d = new Date(date);
-
-  if (isNaN(d.getTime())) return "";
-
-  return d.toLocaleString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  });
-}
-
-async function load() {
-  try {
-    const response = await fetch(API);
-
-    if (!response.ok) {
-      throw new Error("Serverdan ma'lumot olinmadi");
-    }
-
-    const rows = await response.json();
-
-    notes.innerHTML = "";
-
-    if (!Array.isArray(rows) || rows.length === 0) {
-      notes.innerHTML =
-        '<div class="empty">Hozircha tabriklar yo‘q. Birinchi bo‘lib tabrik yo‘llang! 💌</div>';
-      return;
-    }
-
-    rows.forEach(r => {
-      const oldRecord = r.message == null || r.message === "";
-
-      const person = oldRecord
-        ? "Avvalgi tabrik"
-        : escapeText(r.name);
-
-      const message = oldRecord
-        ? escapeText(r.name)
-        : escapeText(r.message);
-
-      const card = document.createElement("article");
-      card.className = "card";
-
-      const top = document.createElement("div");
-      top.className = "card-top";
-
-      const avatar = document.createElement("div");
-      avatar.className = "avatar";
-      avatar.textContent = oldRecord
-        ? "💌"
-        : person.charAt(0).toUpperCase();
-
-      const info = document.createElement("div");
-
-      const personName = document.createElement("div");
-      personName.className = "person";
-      personName.textContent = person;
-
-      const date = document.createElement("div");
-      date.className = "date";
-      date.textContent = formatDate(r.created_at);
-
-      info.append(personName, date);
-      top.append(avatar, info);
-
-      const text = document.createElement("div");
-      text.className = "message";
-      text.textContent = message;
-
-      const bottom = document.createElement("div");
-      bottom.className = "card-bottom";
-
-      const gift = document.createElement("button");
-      gift.className = "gift-btn";
-      gift.textContent = "🎁 Sovg'a yuborish";
-
-      gift.addEventListener("click", () => sendGift(r.id, gift));
-
-      const count = document.createElement("div");
-      count.className = "gift-count";
-      count.textContent = "❤️ " + (r.gift_count || 0);
-
-      bottom.append(gift, count);
-      card.append(top, text, bottom);
-
-      notes.appendChild(card);
-    });
-
-  } catch (error) {
-    notes.innerHTML =
-      '<div class="empty">Ma’lumotlarni yuklashda xatolik yuz berdi. Sahifani yangilang.</div>';
-
-    console.error(error);
-  }
-}
-
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (!name || !message) {
-    statusBox.textContent = "Ism va tabrik matnini kiriting!";
-    return;
-  }
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Yuborilmoqda...";
-  statusBox.textContent = "";
-
-  try {
-    const response = await fetch(API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, message })
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Saqlashda xatolik");
-    }
-
-    form.reset();
-    statusBox.textContent = "✅ Tabrik muvaffaqiyatli yuborildi!";
-
-    await load();
-
-  } catch (error) {
-    statusBox.textContent = "❌ " + error.message;
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = "💌 Tabrikni yuborish";
-  }
-});
-
-async function sendGift(id, button) {
-  button.disabled = true;
-  button.textContent = "Yuborilmoqda...";
-
-  try {
-    const response = await fetch(API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        action: "gift",
-        id: id
-      })
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Sovg'a yuborilmadi");
-    }
-
-    await load();
-
-  } catch (error) {
-    alert(error.message);
-    button.disabled = false;
-    button.textContent = "🎁 Sovg'a yuborish";
-  }
-}
-
-load();
-</script></body>
-</html><!DOCTYPE html><html lang="uz">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17152e">
-<title>Tabriklar olami | Mehr va ehtirom</title><style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #111126;
-  color: #fff;
-  min-height: 100vh;
-}
-
-header {
-  padding: 24px 18px;
-  text-align: center;
-  background: linear-gradient(135deg, #251b48, #493078, #241c42);
-  border-bottom: 1px solid #ffffff20;
-}
-
-.logo {
-  font-size: 30px;
-  margin-bottom: 8px;
-}
-
-header h1 {
-  font-size: 27px;
-  color: #ffe5a5;
-  letter-spacing: 1px;
-}
-
-header p {
-  color: #d5c9ed;
-  font-size: 14px;
-  margin-top: 9px;
-}
-
-.hero {
-  text-align: center;
-  padding: 55px 20px 35px;
-}
-
-.hero .symbol {
-  font-size: 52px;
-  margin-bottom: 18px;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.hero h2 {
-  font-size: 25px;
-  color: #ffe5a5;
-  margin-bottom: 12px;
-}
-
-.hero p {
-  max-width: 430px;
-  margin: auto;
-  color: #c7c3dc;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.container {
-  width: 100%;
-  max-width: 650px;
-  margin: auto;
-  padding: 15px 18px 50px;
-}
-
-.form-box {
-  background: linear-gradient(145deg, #282347, #1e1b38);
-  border: 1px solid #ffffff20;
-  border-radius: 20px;
-  padding: 23px;
-  box-shadow: 0 12px 35px #0004;
-}
-
-.form-box h3 {
-  color: #ffe5a5;
-  font-size: 19px;
-  margin-bottom: 20px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 13px;
-  border-radius: 11px;
-  border: 1px solid #ffffff25;
-  background: #15142c;
-  color: white;
-  font-size: 15px;
-  outline: none;
-  font-family: inherit;
-}
-
-input:focus, textarea:focus {
-  border-color: #d9b56e;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-input::placeholder, textarea::placeholder {
-  color: #9994b3;
-}
-
-.main-btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #e8c27a, #b88b43);
-  color: #241a31;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.main-btn:disabled {
-  opacity: .6;
-  cursor: wait;
-}
-
-.section-title {
-  text-align: center;
-  margin: 38px 0 22px;
-}
-
-.section-title h2 {
-  color: #ffe5a5;
-  font-size: 23px;
-}
-
-.section-title p {
-  color: #aaa5c5;
-  font-size: 13px;
-  margin-top: 7px;
-}
-
-.notes {
-  display: grid;
-  gap: 15px;
-}
-
-.card {
-  background: linear-gradient(145deg, #282347, #1d1a35);
-  border: 1px solid #ffffff1c;
-  border-radius: 16px;
-  padding: 19px;
-  animation: appear .5s ease;
-}
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: 13px;
-}
-
-.avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #e8c27a, #8f68b7);
-  color: #21182d;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.person {
-  font-weight: bold;
-  color: #ffe5a5;
-  font-size: 15px;
-}
-
-.date {
-  color: #9691ad;
-  font-size: 11px;
-  margin-top: 4px;
-}
-
-.message {
-  color: #e5e0f2;
-  line-height: 1.7;
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 17px;
-  padding-top: 13px;
-  border-top: 1px solid #ffffff15;
-}
-
-.gift-btn {
-  background: #ffffff12;
-  border: 1px solid #d9b56e66;
-  color: #ffe5a5;
-  padding: 9px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.gift-btn:active {
-  transform: scale(.95);
-}
-
-.gift-count {
-  color: #d9b56e;
-  font-size: 13px;
-}
-
-.empty {
-  text-align: center;
-  padding: 30px;
-  color: #aaa5c5;
-  background: #ffffff08;
-  border-radius: 15px;
-}
-
-.status {
-  text-align: center;
-  font-size: 13px;
-  margin-top: 12px;
-  color: #ffe5a5;
-}
-
-footer {
-  text-align: center;
-  padding: 25px 15px;
-  color: #8d88a7;
-  font-size: 12px;
-  border-top: 1px solid #ffffff15;
-}
-
-footer span {
-  color: #e8c27a;
-}
-
-@media(max-width: 400px) {
-  header h1 { font-size: 23px; }
-  .hero h2 { font-size: 21px; }
-  .form-box { padding: 18px; }
-}
-</style></head><body><header>
-  <div class="logo">💌</div>
-  <h1>Tabriklar olami</h1>
-  <p>Mehr, samimiyat va ezgu tilaklar maskani</p>
-</header><section class="hero">
-  <div class="symbol">✨</div>
-  <h2>Yaxshi tilaklar qalblarni yaqinlashtiradi</h2>
-  <p>
-    O'zingizning samimiy tilaklaringizni qoldiring.
-    Har bir ezgu so'z kimgadir quvonch va tabassum ulashsin!
-  </p>
-</section><main class="container">  <section class="form-box">
-    <h3>✍️ Tabrik yo'llash</h3><form id="noteForm">
-  <input
-    type="text"
-    id="name"
-    placeholder="Ismingizni kiriting"
-    maxlength="60"
-    required
-  >
-
-  <textarea
-    id="message"
-    placeholder="Samimiy tilaklaringizni yozing..."
-    maxlength="500"
-    required
-  ></textarea>
-
-  <button class="main-btn" id="submitBtn" type="submit">
-    💌 Tabrikni yuborish
-  </button>
-</form>
-
-<div class="status" id="status"></div>
-
-  </section>  <section>
-    <div class="section-title">
-      <h2>💝 Samimiy tabriklar</h2>
-      <p>Qalblardan chiqqan eng go'zal tilaklar</p>
-    </div><div class="notes" id="notes">
-  <div class="empty">Tabriklar yuklanmoqda...</div>
-</div>
-
-  </section></main><footer>
-  <p>Mehr ulashish — eng go'zal sovg'a ❤️</p>
-  <p style="margin-top:8px">© 2026 <span>Tabriklar olami</span></p>
-</footer><script>
-const API = "/.netlify/functions/api";
-
-const notes = document.getElementById("notes");
-const form = document.getElementById("noteForm");
-const statusBox = document.getElementById("status");
-const submitBtn = document.getElementById("submitBtn");
-
-function escapeText(value) {
-  return String(value ?? "");
-}
-
-function formatDate(date) {
-  const d = new Date(date);
-
-  if (isNaN(d.getTime())) return "";
-
-  return d.toLocaleString("uz-UZ", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  });
-}
-
-async function load() {
-  try {
-    const response = await fetch(API);
-
-    if (!response.ok) {
-      throw new Error("Serverdan ma'lumot olinmadi");
-    }
-
-    const rows = await response.json();
-
-    notes.innerHTML = "";
-
-    if (!Array.isArray(rows) || rows.length === 0) {
-      notes.innerHTML =
-        '<div class="empty">Hozircha tabriklar yo‘q. Birinchi bo‘lib tabrik yo‘llang! 💌</div>';
-      return;
-    }
-
-    rows.forEach(r => {
-      const oldRecord = r.message == null || r.message === "";
-
-      const person = oldRecord
-        ? "Avvalgi tabrik"
-        : escapeText(r.name);
-
-      const message = oldRecord
-        ? escapeText(r.name)
-        : escapeText(r.message);
-
-      const card = document.createElement("article");
-      card.className = "card";
-
-      const top = document.createElement("div");
-      top.className = "card-top";
-
-      const avatar = document.createElement("div");
-      avatar.className = "avatar";
-      avatar.textContent = oldRecord
-        ? "💌"
-        : person.charAt(0).toUpperCase();
-
-      const info = document.createElement("div");
-
-      const personName = document.createElement("div");
-      personName.className = "person";
-      personName.textContent = person;
-
-      const date = document.createElement("div");
-      date.className = "date";
-      date.textContent = formatDate(r.created_at);
-
-      info.append(personName, date);
-      top.append(avatar, info);
-
-      const text = document.createElement("div");
-      text.className = "message";
-      text.textContent = message;
-
-      const bottom = document.createElement("div");
-      bottom.className = "card-bottom";
-
-      const gift = document.createElement("button");
-      gift.className = "gift-btn";
-      gift.textContent = "🎁 Sovg'a yuborish";
-
-      gift.addEventListener("click", () => sendGift(r.id, gift));
-
-      const count = document.createElement("div");
-      count.className = "gift-count";
-      count.textContent = "❤️ " + (r.gift_count || 0);
-
-      bottom.append(gift, count);
-      card.append(top, text, bottom);
-
-      notes.appendChild(card);
-    });
-
-  } catch (error) {
-    notes.innerHTML =
-      '<div class="empty">Ma’lumotlarni yuklashda xatolik yuz berdi. Sahifani yangilang.</div>';
-
-    console.error(error);
-  }
-}
-
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (!name || !message) {
-    statusBox.textContent = "Ism va tabrik matnini kiriting!";
-    return;
-  }
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Yuborilmoqda...";
-  statusBox.textContent = "";
-
-  try {
-    const response = await fetch(API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, message })
-    });
-
-    const result = await response.json();
-
-    if (!response.ok) {
-      throw new Error(result.error || "Saqlashda xatolik");
-    }
-
-    form.reset();
-    statusBox.textContent = "✅ Tabrik muvaffaqiyatli yuborildi!";
-
-    await load();
-
-  } catch (error) {
-    statusBox.textContent = "❌ " + error.message;
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = "💌 Tabrikni yuborish";
-  }
-});
-
+/* SOVG'A YUBORISH */
 async function sendGift(id, button) {
   button.disabled = true;
   button.textContent = "Yuborilmoqda...";
