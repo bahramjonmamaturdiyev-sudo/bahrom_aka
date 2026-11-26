@@ -485,7 +485,7 @@ footer span {
   ></textarea>
 
   <button class="main-btn" id="submitBtn" type="submit">
-    🎁 Tabrikni yuborish
+    📬 Tabrikni yuborish
   </button>
 </form>
 
@@ -683,7 +683,7 @@ async function load() {
 
       const count = document.createElement("div");
       count.className = "gift-count";
-      count.textContent = "❤️ " + (r.gift_count || 0);
+      count.textContent = "🎁 " + (r.gift_count || 0);
 
       bottom.append(gift, count);
       card.append(top, text, bottom);
@@ -739,7 +739,7 @@ form.addEventListener("submit", async function(e) {
     statusBox.textContent = "❌ " + error.message;
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = "🎁 Tabrikni yuborish";
+    submitBtn.textContent = "📬 Tabrikni yuborish";
   }
 });
 
