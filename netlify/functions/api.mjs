@@ -19,11 +19,11 @@ export default async (req) => {
     // TABRIKLARNI OLISH
     if (req.method === "GET") {
       const [rows] = await db.execute(
-        SELECT id, name, message, created_at, gift_count
-         FROM notes
-         ORDER BY id DESC
-         LIMIT 100
-      );
+  SELECT id, name, message, created_at, gift_count
+   FROM notes
+   ORDER BY id DESC
+   LIMIT 100
+);
 
       return Response.json(rows);
     }
