@@ -1,8 +1,15 @@
-<!DOCTYPE html><html lang="uz">
+<!DOCTYPE html>
+<html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07152e"><title>Yangi yil muborak! 🎄</title><style>
+<meta name="theme-color" content="#07152e">
+
+<title>Yangi yil muborak! 🎄</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +17,13 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Caveat', cursive;
   background:
     radial-gradient(ellipse at top, #183968 0%, #0b1c3b 45%, #050d20 100%);
   color: #fff;
   min-height: 100vh;
   overflow-x: hidden;
+  font-size: 19px;
 }
 
 /* QOR */
@@ -28,7 +36,7 @@ body {
   z-index: 10;
 }
 
-/* ARCHA SHОXLARI */
+/* ARCHA SHOXLARI */
 .garland {
   position: fixed;
   top: 0;
@@ -129,12 +137,14 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
+
   background-image:
     radial-gradient(2px 2px at 20% 30%, #fff9, transparent),
     radial-gradient(2px 2px at 70% 20%, #fff8, transparent),
     radial-gradient(2px 2px at 85% 60%, #fff9, transparent),
     radial-gradient(2px 2px at 35% 75%, #fff7, transparent),
     radial-gradient(3px 3px at 55% 45%, #ffe6a080, transparent);
+
   background-size: 250px 250px;
   animation: stars 8s ease-in-out infinite alternate;
 }
@@ -150,6 +160,7 @@ header {
   z-index: 1;
   text-align: center;
   padding: 100px 18px 30px;
+
   background: linear-gradient(
     180deg,
     #10294d99,
@@ -166,21 +177,58 @@ header {
 }
 
 @keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
+/* YANGI YIL MUBORAK ANIMATSIYASI */
 header h1 {
   color: #ffe5a5;
-  font-size: clamp(27px, 6vw, 39px);
-  text-shadow: 0 0 20px #e9bd64;
-  letter-spacing: 1px;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(38px, 8vw, 58px);
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 12px #ffe5a5,
+    0 0 25px #ffca55,
+    0 0 45px #ffb52e;
+
+  animation: newYearGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes newYearGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+
+    text-shadow:
+      0 0 5px #fff,
+      0 0 12px #ffe5a5,
+      0 0 25px #ffca55;
+  }
+
+  50% {
+    opacity: .75;
+    transform: scale(1.07);
+
+    text-shadow:
+      0 0 10px #fff,
+      0 0 25px #ffe5a5,
+      0 0 45px #ffca55,
+      0 0 65px #ff9800;
+  }
 }
 
 header p {
   color: #d7e5ff;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 19px;
 }
 
 /* BAYRAM TABRIKI */
@@ -199,7 +247,7 @@ header p {
 
 .hero h2 {
   color: #ffe6a6;
-  font-size: clamp(21px, 5vw, 30px);
+  font-size: clamp(27px, 5vw, 35px);
   margin-bottom: 15px;
   text-shadow: 0 0 12px #d6a94f66;
 }
@@ -209,7 +257,7 @@ header p {
   margin: auto;
   color: #d5e4fa;
   line-height: 1.8;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 /* ASOSIY KONTEYNER */
@@ -228,12 +276,15 @@ header p {
   border: 1px solid #e8c77b66;
   border-radius: 20px;
   padding: 23px;
-  box-shadow: 0 10px 35px #0005, 0 0 20px #e8c77b12;
+
+  box-shadow:
+    0 10px 35px #0005,
+    0 0 20px #e8c77b12;
 }
 
 .form-box h3 {
   color: #ffe5a5;
-  font-size: 19px;
+  font-size: 27px;
   margin-bottom: 20px;
 }
 
@@ -245,7 +296,7 @@ input, textarea {
   border: 1px solid #ffffff30;
   background: #091a34;
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   outline: none;
   font-family: inherit;
 }
@@ -269,12 +320,20 @@ input::placeholder, textarea::placeholder {
   padding: 15px;
   border: 1px solid #ffe5a5;
   border-radius: 11px;
-  background: linear-gradient(135deg, #f3d58c, #c18c3e);
+
+  background: linear-gradient(
+    135deg,
+    #f3d58c,
+    #c18c3e
+  );
+
   color: #19233b;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 23px;
   font-weight: bold;
   cursor: pointer;
   transition: .3s;
+
   box-shadow: 0 0 15px #d9b56e33;
 }
 
@@ -295,13 +354,13 @@ input::placeholder, textarea::placeholder {
 
 .section-title h2 {
   color: #ffe5a5;
-  font-size: 24px;
+  font-size: 34px;
   text-shadow: 0 0 12px #d9b56e66;
 }
 
 .section-title p {
   color: #c2d3eb;
-  font-size: 13px;
+  font-size: 19px;
   margin-top: 8px;
 }
 
@@ -315,7 +374,9 @@ input::placeholder, textarea::placeholder {
   border: 1px solid #e6c47a55;
   border-radius: 17px;
   padding: 19px;
+
   box-shadow: 0 8px 25px #0004;
+
   animation: appear .5s ease;
   transition: .3s;
 }
@@ -330,6 +391,7 @@ input::placeholder, textarea::placeholder {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -343,34 +405,42 @@ input::placeholder, textarea::placeholder {
   margin-bottom: 13px;
 }
 
+/* OQ FONLI AVATAR */
 .avatar {
   width: 43px;
   height: 43px;
+  min-width: 43px;
   border-radius: 50%;
+
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #ffe5a5, #c18c3e);
+
+  background: #ffffff;
   color: #1a2944;
+
   font-weight: bold;
-  font-size: 18px;
+  font-size: 23px;
+
+  border: 2px solid #ffe5a5;
+  box-shadow: 0 0 12px #ffffff55;
 }
 
 .person {
   font-weight: bold;
   color: #ffe5a5;
-  font-size: 15px;
+  font-size: 23px;
 }
 
 .date {
   color: #b0c3df;
-  font-size: 11px;
+  font-size: 16px;
   margin-top: 4px;
 }
 
 .message {
   color: #e4edfa;
   line-height: 1.8;
-  font-size: 14px;
+  font-size: 21px;
   overflow-wrap: anywhere;
 }
 
@@ -387,10 +457,13 @@ input::placeholder, textarea::placeholder {
   background: #e8c77b18;
   border: 1px solid #e8c77b88;
   color: #ffe5a5;
+
   padding: 10px 14px;
   border-radius: 20px;
+
   cursor: pointer;
-  font-size: 13px;
+  font-family: inherit;
+  font-size: 19px;
   transition: .3s;
 }
 
@@ -401,7 +474,7 @@ input::placeholder, textarea::placeholder {
 
 .gift-count {
   color: #ffb8c6;
-  font-size: 13px;
+  font-size: 19px;
 }
 
 .empty {
@@ -411,22 +484,25 @@ input::placeholder, textarea::placeholder {
   background: #ffffff0b;
   border-radius: 15px;
   border: 1px solid #ffffff20;
+  font-size: 21px;
 }
 
 .status {
   text-align: center;
-  font-size: 13px;
+  font-size: 20px;
   margin-top: 12px;
   color: #ffe5a5;
 }
 
+/* FOOTER */
 footer {
   position: relative;
   z-index: 1;
   text-align: center;
   padding: 28px 15px;
   color: #b1c3dc;
-  font-size: 12px;
+  font-size: 19px;
+
   border-top: 1px solid #ffffff20;
   background: #07152e99;
 }
@@ -435,13 +511,26 @@ footer span {
   color: #ffe5a5;
 }
 
+/* TELEFON EKRANI */
 @media(max-width: 400px) {
-  header h1 { font-size: 25px; }
-  .hero h2 { font-size: 21px; }
-  .form-box { padding: 18px; }
+  header h1 {
+    font-size: 36px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .form-box {
+    padding: 18px;
+  }
+
+  .message {
+    font-size: 19px;
+  }
 }
 
-/* HARAKATNI KAMAYTIRISH SOZLAMASI */
+/* HARAKATNI KAMAYTIRISH */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important;
@@ -449,61 +538,120 @@ footer span {
     scroll-behavior: auto !important;
   }
 }
-</style></head><body><canvas id="snow"></canvas>
+</style>
+</head>
 
-<div class="stars"></div><div class="garland">
+<body>
+
+<canvas id="snow"></canvas>
+
+<div class="stars"></div>
+
+<div class="garland">
   <div class="garland-branch"></div>
   <div class="lights" id="lights"></div>
-</div><header>
+</div>
+
+<header>
   <div class="logo">🎄</div>
+
   <h1>Yangi yil muborak!</h1>
-  <p>❄️ Ezgu tilaklar va sehrli lahzalar olamiga xush kelibsiz ❄️</p>
-</header><section class="hero">
+
+  <p>
+    ❄️ Ezgu tilaklar va sehrli lahzalar olamiga xush kelibsiz ❄️
+  </p>
+</header>
+
+<section class="hero">
+
   <div class="symbol">🎅🏻</div>
+
   <h2>Yangi yil — yangi orzular bayrami!</h2>
+
   <p>
     Kirib kelayotgan yangi yil qalbingizga quvonch,
     xonadoningizga fayz-u baraka, hayotingizga baxt
     va omad olib kelsin!
     Eng samimiy tilaklaringizni biz bilan baham ko'ring.
   </p>
-</section><main class="container">  <section class="form-box">
-    <h3>💌 Yangi yil tabrigini yo'llang</h3><form id="noteForm">
-  <input
-    type="text"
-    id="name"
-    placeholder="Ismingizni kiriting"
-    maxlength="60"
-    required
-  >
 
-  <textarea
-    id="message"
-    placeholder="Yangi yil tilaklaringizni yozing..."
-    maxlength="500"
-    required
-  ></textarea>
+</section>
 
-  <button class="main-btn" id="submitBtn" type="submit">
-    📬 Tabrikni yuborish
-  </button>
-</form>
+<main class="container">
 
-<div class="status" id="status"></div>
+  <section class="form-box">
 
-  </section>  <section>
+    <h3>💌 Yangi yil tabrigini yo'llang</h3>
+
+    <form id="noteForm">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Ismingizni kiriting"
+        maxlength="60"
+        required
+      >
+
+      <textarea
+        id="message"
+        placeholder="Yangi yil tilaklaringizni yozing..."
+        maxlength="500"
+        required
+      ></textarea>
+
+      <button
+        class="main-btn"
+        id="submitBtn"
+        type="submit"
+      >
+        📬 Tabrikni yuborish
+      </button>
+
+    </form>
+
+    <div class="status" id="status"></div>
+
+  </section>
+
+  <section>
+
     <div class="section-title">
-      <h2>✨ Samimiy tilaklar ✨</h2>
-      <p>Har bir tabrik — qalbdan chiqqan sovg'a</p>
-    </div><div class="notes" id="notes">
-  <div class="empty">Tabriklar yuklanmoqda... ❄️</div>
-</div>
 
-  </section></main><footer>
+      <h2>✨ Samimiy tilaklar ✨</h2>
+
+      <p>Har bir tabrik — qalbdan chiqqan sovg'a</p>
+
+    </div>
+
+    <div class="notes" id="notes">
+
+      <div class="empty">
+        Tabriklar yuklanmoqda... ❄️
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
   <p>🎄 Mehr ulashish — eng go'zal sovg'a! ❤️</p>
-  <p style="margin-top:8px">© 2027 <span>Yangi yil tabriklari</span></p>
-  <p style="margin-top:8px">❄️ Yangi yilingiz muborak! ❄️</p>
-</footer><script>
+
+  <p style="margin-top:8px">
+    © 2027 <span>Yangi yil tabriklari</span>
+  </p>
+
+  <p style="margin-top:8px">
+    ❄️ Yangi yilingiz muborak! ❄️
+  </p>
+
+</footer>
+
+<script>
+
 const API = "/.netlify/functions/api";
 
 const notes = document.getElementById("notes");
@@ -512,15 +660,21 @@ const statusBox = document.getElementById("status");
 const submitBtn = document.getElementById("submitBtn");
 
 /* ARCHA CHIROQLARINI YARATISH */
+
 const lights = document.getElementById("lights");
 
 for (let i = 0; i < 28; i++) {
+
   const bulb = document.createElement("span");
+
   bulb.className = "bulb";
+
   lights.appendChild(bulb);
+
 }
 
 /* QOR EFFEKTI */
+
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
@@ -529,7 +683,11 @@ let height;
 let flakes = [];
 
 function resizeSnow() {
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+  const ratio = Math.min(
+    window.devicePixelRatio || 1,
+    2
+  );
 
   width = window.innerWidth;
   height = window.innerHeight;
@@ -542,84 +700,148 @@ function resizeSnow() {
 
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-  const count = Math.min(100, Math.max(35, Math.floor(width / 5)));
+  const count = Math.min(
+    100,
+    Math.max(35, Math.floor(width / 5))
+  );
 
   flakes = [];
 
   for (let i = 0; i < count; i++) {
+
     flakes.push(createFlake(true));
+
   }
+
 }
 
 function createFlake(randomY) {
+
   return {
+
     x: Math.random() * width,
-    y: randomY ? Math.random() * height : -10,
+
+    y: randomY
+      ? Math.random() * height
+      : -10,
+
     radius: Math.random() * 2.5 + 1,
+
     speed: Math.random() * 1.3 + .5,
+
     drift: Math.random() * .7 - .35,
+
     opacity: Math.random() * .6 + .3,
+
     phase: Math.random() * Math.PI * 2
+
   };
+
 }
 
 let animationFrame;
 
 function drawSnow() {
+
   ctx.clearRect(0, 0, width, height);
 
   flakes.forEach(flake => {
+
     flake.phase += .01;
 
-    flake.x += flake.drift + Math.sin(flake.phase) * .25;
+    flake.x +=
+      flake.drift +
+      Math.sin(flake.phase) * .25;
+
     flake.y += flake.speed;
 
     if (flake.y > height + 10) {
-      Object.assign(flake, createFlake(false));
+
+      Object.assign(
+        flake,
+        createFlake(false)
+      );
+
     }
 
-    if (flake.x < -10) flake.x = width + 10;
-    if (flake.x > width + 10) flake.x = -10;
+    if (flake.x < -10) {
+      flake.x = width + 10;
+    }
+
+    if (flake.x > width + 10) {
+      flake.x = -10;
+    }
 
     ctx.beginPath();
-    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${flake.opacity})`;
+
+    ctx.arc(
+      flake.x,
+      flake.y,
+      flake.radius,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle =
+      `rgba(255,255,255,${flake.opacity})`;
+
     ctx.shadowBlur = 5;
     ctx.shadowColor = "#ffffff";
+
     ctx.fill();
+
   });
 
   ctx.shadowBlur = 0;
 
   animationFrame = requestAnimationFrame(drawSnow);
+
 }
 
 resizeSnow();
+
 drawSnow();
 
 window.addEventListener("resize", resizeSnow);
 
-/* MA'LUMOTLARNI YUKLASH */
+/* SANANI FORMATLASH */
+
 function formatDate(date) {
+
   const d = new Date(date);
 
   if (isNaN(d.getTime())) return "";
 
   return d.toLocaleString("uz-UZ", {
+
     day: "2-digit",
+
     month: "long",
+
     year: "numeric",
+
     hour: "2-digit",
+
     minute: "2-digit"
+
   });
+
 }
 
+/* TABRIKLARNI YUKLASH */
+
 async function load() {
+
   try {
+
     const response = await fetch(API);
 
     if (!response.ok) {
-      throw new Error("Serverdan ma'lumot olinmadi");
+
+      throw new Error(
+        "Serverdan ma'lumot olinmadi"
+      );
+
     }
 
     const rows = await response.json();
@@ -627,13 +849,18 @@ async function load() {
     notes.innerHTML = "";
 
     if (!Array.isArray(rows) || rows.length === 0) {
+
       notes.innerHTML =
         '<div class="empty">Hozircha tabriklar yo‘q. Birinchi bo‘lib tabrik yo‘llang! 💌</div>';
+
       return;
+
     }
 
     rows.forEach(r => {
-      const oldRecord = r.message == null || r.message === "";
+
+      const oldRecord =
+        r.message == null || r.message === "";
 
       const person = oldRecord
         ? "Kutilmagan mehmon"
@@ -644,13 +871,19 @@ async function load() {
         : String(r.message ?? "");
 
       const card = document.createElement("article");
+
       card.className = "card";
 
+      /* AVATAR VA ISM */
+
       const top = document.createElement("div");
+
       top.className = "card-top";
 
       const avatar = document.createElement("div");
+
       avatar.className = "avatar";
+
       avatar.textContent = oldRecord
         ? "🥳"
         : person.charAt(0).toUpperCase();
@@ -658,123 +891,212 @@ async function load() {
       const info = document.createElement("div");
 
       const personName = document.createElement("div");
+
       personName.className = "person";
+
       personName.textContent = person;
 
       const date = document.createElement("div");
+
       date.className = "date";
+
       date.textContent = formatDate(r.created_at);
 
       info.append(personName, date);
+
       top.append(avatar, info);
 
+      /* TABRIK MATNI */
+
       const text = document.createElement("div");
+
       text.className = "message";
+
       text.textContent = message;
 
+      /* SOVG'A TUGMASI */
+
       const bottom = document.createElement("div");
+
       bottom.className = "card-bottom";
 
       const gift = document.createElement("button");
+
       gift.className = "gift-btn";
+
       gift.textContent = "🎁 Sovg'a yuborish";
 
-      gift.addEventListener("click", () => sendGift(r.id, gift));
+      gift.addEventListener("click", () => {
+
+        sendGift(r.id, gift);
+
+      });
 
       const count = document.createElement("div");
+
       count.className = "gift-count";
-      count.textContent = "🎁 " + (r.gift_count || 0);
+
+      count.textContent =
+        "🎁 " + (r.gift_count || 0);
 
       bottom.append(gift, count);
+
       card.append(top, text, bottom);
 
       notes.appendChild(card);
+
     });
 
   } catch (error) {
+
     notes.innerHTML =
       '<div class="empty">Ma’lumotlarni yuklashda xatolik. Sahifani yangilang.</div>';
 
     console.error(error);
+
   }
+
 }
 
-/* YANGI TABRIK SAQLASH */
+/* YANGI TABRIKNI SAQLASH */
+
 form.addEventListener("submit", async function(e) {
+
   e.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const message = document.getElementById("message").value.trim();
+  const name = document
+    .getElementById("name")
+    .value
+    .trim();
+
+  const message = document
+    .getElementById("message")
+    .value
+    .trim();
 
   if (!name || !message) {
-    statusBox.textContent = "Ism va tabrik matnini kiriting!";
+
+    statusBox.textContent =
+      "Ism va tabrik matnini kiriting!";
+
     return;
+
   }
 
   submitBtn.disabled = true;
+
   submitBtn.textContent = "Yuborilmoqda...";
+
   statusBox.textContent = "";
 
   try {
+
     const response = await fetch(API, {
+
       method: "POST",
+
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name, message })
+
+      body: JSON.stringify({
+        name,
+        message
+      })
+
     });
 
     const result = await response.json();
 
     if (!response.ok) {
-      throw new Error(result.error || "Saqlashda xatolik");
+
+      throw new Error(
+        result.error || "Saqlashda xatolik"
+      );
+
     }
 
     form.reset();
-    statusBox.textContent = "🎄 Tabrik muvaffaqiyatli yuborildi!";
+
+    statusBox.textContent =
+      "🎄 Tabrik muvaffaqiyatli yuborildi!";
 
     await load();
 
   } catch (error) {
-    statusBox.textContent = "❌ " + error.message;
+
+    statusBox.textContent =
+      "❌ " + error.message;
+
   } finally {
+
     submitBtn.disabled = false;
-    submitBtn.textContent = "📬 Tabrikni yuborish";
+
+    submitBtn.textContent =
+      "📬 Tabrikni yuborish";
+
   }
+
 });
 
 /* SOVG'A YUBORISH */
+
 async function sendGift(id, button) {
+
   button.disabled = true;
+
   button.textContent = "Yuborilmoqda...";
 
   try {
+
     const response = await fetch(API, {
+
       method: "POST",
+
       headers: {
         "Content-Type": "application/json"
       },
+
       body: JSON.stringify({
+
         action: "gift",
+
         id: id
+
       })
+
     });
 
     const result = await response.json();
 
     if (!response.ok) {
-      throw new Error(result.error || "Sovg'a yuborilmadi");
+
+      throw new Error(
+        result.error || "Sovg'a yuborilmadi"
+      );
+
     }
 
     await load();
 
   } catch (error) {
+
     alert(error.message);
+
     button.disabled = false;
-    button.textContent = "🎁 Sovg'a yuborish";
+
+    button.textContent =
+      "🎁 Sovg'a yuborish";
+
   }
+
 }
 
+/* SAHIFANI ISHGA TUSHIRISH */
+
 load();
-</script></body>
+
+</script>
+
+</body>
 </html>
